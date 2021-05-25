@@ -48,13 +48,13 @@ public class PlayerScript : MonoBehaviour
     {
         if (GameManager.lives > 0 && photonView.isMine)
         {
-            Movement();
-            FireProjectile();
+            CheckInput();
+            //FireProjectile();
         }
         
     }
 
-    void Movement()
+    void CheckInput()
     {
         if (Input.GetKey(KeyCode.D))
         {
@@ -72,16 +72,25 @@ public class PlayerScript : MonoBehaviour
         {
             transform.Translate(new Vector3(0, -5 * Time.deltaTime, 0));
         }
-    }
-
-    void FireProjectile()
-    {
         shotTimer += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && shotTimer >= shotPeriod)
+        if (Input.GetKey(KeyCode.Space) && shotTimer >= shotPeriod && !GameManager.isWaiting)
         {
-            projectileClone = Instantiate(projectile, new Vector3(player.transform.position.x, player.transform.position.y+0.8f, player.transform.position.z), player.transform.rotation) as GameObject;
+            Debug.Log("Fire!");
+            FireProjectile();
             shotTimer = 0;
         }
+        
+    }
+
+    [PunRPC]
+    void FireProjectile()
+    {
+        //projectileClone = Instantiate(projectile, new Vector3(player.transform.position.x, player.transform.position.y+0.8f, player.transform.position.z), player.transform.rotation) as GameObject;
+
+        Debug.Log("Fire!2");
+        PhotonNetwork.Instantiate(projectile.name, new Vector3(player.transform.position.x, player.transform.position.y + 0.8f, 18), Quaternion.identity, 0);
+
+        Debug.Log("Fire!3");
 
     }
 

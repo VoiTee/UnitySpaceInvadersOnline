@@ -264,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 420902, guid: e2a563409f05b26429e07cb45c0d2ea2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.526146
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 420902, guid: e2a563409f05b26429e07cb45c0d2ea2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -550,6 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 4823915653739662282, guid: d969643cacbc62b4da7c6f9ff12c73ea, type: 3}
+  EnemyPrefab: {fileID: 147846, guid: e2a563409f05b26429e07cb45c0d2ea2, type: 3}
   SceneCamera: {fileID: 0}
   livesLabel: {fileID: 1173751971}
   endScreen: {fileID: 1149209727}
@@ -557,6 +558,7 @@ MonoBehaviour:
   DisconnectUI: {fileID: 213679670}
   ServerMessage: {fileID: 8958484441767419692, guid: 4eb327c34a289fc47872fe779bf6f6f6, type: 3}
   ServerMessageContainer: {fileID: 1742352607}
+  WaitingMessage: {fileID: 0}
   timeToLeave: 4
   leaveTimer: 0
 --- !u!4 &327593715
@@ -1007,7 +1009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732705875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 80.24949, y: 39.95947, z: 1.0495}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1113,8 +1115,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.6987, y: 0}
+  m_SizeDelta: {x: 459.3313, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1149209727
 MonoBehaviour:
@@ -6686,7 +6688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1857722793
 Transform:
   m_ObjectHideFlags: 0

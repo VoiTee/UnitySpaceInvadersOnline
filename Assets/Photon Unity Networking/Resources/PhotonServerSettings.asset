@@ -43,4 +43,7 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - TaggedPlayer
+  - SpawnEnemies
+  - FireProjectile
+  - fireEnemyProjectile
   DisableAutoOpenWizard: 1

@@ -24,6 +24,8 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (GameManager.isGameRunning)
         {
             
@@ -47,12 +49,14 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    [PunRPC]
     void fireEnemyProjectile()
     {
         //randomly fire
         if (Random.Range(0f, 500f) < 1)
         {
-            enemyProjectileClone = Instantiate(enemyProjectile, new Vector3(enemy.transform.position.x, enemy.transform.position.y - 0.8f, enemy.transform.position.z), enemy.transform.rotation) as GameObject;
+            //enemyProjectileClone = Instantiate(enemyProjectile, new Vector3(enemy.transform.position.x, enemy.transform.position.y - 0.8f, enemy.transform.position.z), enemy.transform.rotation) as GameObject;
+            PhotonNetwork.Instantiate(enemyProjectile.name, new Vector3(enemy.transform.position.x, enemy.transform.position.y + 0.8f, 18), Quaternion.identity, 0);
         }
     }
 }
